@@ -1,0 +1,18 @@
+body{
+    background-color: tomato;
+}
+h1{
+    text-align: center;
+    color: darkred;
+}
+h2{
+    color: antiquewhite;
+}
+button{
+    background-color: darkblue;
+    color: white;
+}
+.cls{
+    background-color: black;
+    color: white;
+}
