@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: tomato;
 }
 h1{
@@ -15,4 +15,14 @@ button{
 .cls{
     background-color: black;
     color: white;
+} */
+
+.box{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid black;
+    margin: 1px;
+    background-color: blueviolet;
+    color: burlywood;
 }

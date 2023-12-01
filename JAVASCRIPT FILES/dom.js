@@ -15,10 +15,29 @@
 
 //! Query selector
 
-let firstELe = document.querySelector("p");
-console.dir(firstELe);
+// let firstELe = document.querySelector("p");
+// console.dir(firstELe);
 
 // let allELe = document.querySelectorAll(".cls");
 // console.dir(allELe);
 
-//? Properties
+// let div = document.querySelector("div");
+// console.dir(div);
+
+// let heading = document.querySelector("h1");
+
+// ? Question
+
+// let H2 = document.querySelector("h2");
+// console.dir(H2);
+
+// H2.innerText = H2.innerText + " Thank you Shraddha mam";
+
+// ? Questions
+
+let divs = document.querySelectorAll(".box");
+let idx = 1;
+for(diiv of divs){
+   diiv.innerText = `Akshay❤️Suppu ${idx}`
+   idx++;
+}
