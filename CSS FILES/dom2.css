@@ -1,10 +1,14 @@
-#box{
+/*#box{
     height: 250px;
     width:150px;
     background-color: cornflowerblue;
     color: gold;
     border: px dotted black;
     text-align: center;
-    
-
+} */
+.content{
+    color: darkblue;
+}
+.newClass{
+    background-color: goldenrod;
 }
