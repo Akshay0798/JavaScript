@@ -65,17 +65,3 @@ document.querySelector("body").prepend(newBtn)*/
 let Para = document.querySelector("p");
 //classList = sare classes ki list aa jati he
 Para.classList.add("newClass");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
