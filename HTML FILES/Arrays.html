@@ -6,6 +6,7 @@
     <title>Arrays</title>
 </head>
 <body>
+    <p id="showdata"></p>
     <script>
         /*
         let arr = [45,55,84,46,7,79]; 
@@ -41,8 +42,58 @@
         // push():add to end
         // Slice( ) : returns a piece of the array
 
-        let companies = ["Bloombarg","Microsoft","Uber","Google","IBM","Netflix"];
+        // let companies = ["Bloombarg","Microsoft","Uber","Google","IBM","Netflix"];
+
+        // ?-------------------------------------------------------------------------------------------------------------
+            
+        const oldarr = ["Bloomberg","Microsoft","Uber","Google","IBM","Netflix"];
+        console.log(oldarr[0]);
+        console.log(oldarr[1]);
+        console.log(oldarr[2]);
+
+        /*const newArr = oldarr.map(function(currVal){
+            return currVal + "KK";
+        });
+        console.log(newArr);*/
+        // console.log(oldarr);
         
+        /*const newArr = oldarr.map(function(currVal,index){
+            return `${index} : ${currVal} KK`
+        });
+        console.log(newArr);*/
+
+        // const newArr = oldarr.map(function(currVal,index,Array){
+        //     // return `${index} : ${currVal} KK`
+        //     //? Arr parameter showing with which array we r playing
+        //      console.log(Array)
+        // });
+        // console.log(newArr);
+
+        const studentData = [
+        { id: 1, name: 'Akshay',degree :"BCA" },
+        { id: 2, name: 'Suppu',degree :"MCA" },
+        { id: 3, name: 'Roshan',degree :"MBA" },
+        { id: 4, name: 'bujjinannu',degree :"BBA" },
+    ];
+
+    // const newdata = studentData.map((currVal) =>{
+    //     return `My name is ${currVal.name}.My hightest degree is ${currVal.degree}`
+    // });
+    // console.log(newdata);
+    // document.getElementById("showdata").innerHTML = newdata;
+
+    // if i have to access specific index name or degree
+    // The map function iterates over each element of the array, and currVal represents a single element at a time, not an array with indices.
+    
+    const newData = studentData.map((currVal, index) => {
+    if (index === 1) {
+        return `My name is ${currVal.name}. My highest degree is ${currVal.degree}`;
+    } else {
+        return null;
+    }
+    });
+    console.log(newData);
+
         
     </script>
 </body>
