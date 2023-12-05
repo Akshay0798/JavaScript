@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>callback and closure and lexical scoping </title>
 
 </head>
 <body>
-    <script src="../JAVASCRIPT FILES/callbackfunction.js"></script>
+    <button id="orange" type="button">orange</button>
+    <button id="green" type="button">Green</button>
+    <!-- <script src="../JAVASCRIPT FILES/callbackfunction.js"></script> -->
+     <script src="../JAVASCRIPT FILES/Closure.js"></script>
+     <script>
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = "orange";
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = "green";
+        // }
+
+        function clickHandler(color){
+            return function(){
+                document.body.style.backgroundColor = `${color}`;
+            }
+            
+        }
+        document.getElementById("green").onclick = clickHandler("green");
+        document.getElementById("orange").onclick = clickHandler("orange");
+     </script>
+
+
+
+
 </body>
 </html>
