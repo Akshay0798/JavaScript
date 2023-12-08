@@ -63,14 +63,14 @@ let countVowel = str => {
 
 //? arr.forEach(callBackFunction):use for array only
 
-/* let arr=['ngp','pune','tanuku'];
+ let arr=['ngp','pune','tanuku'];
 arr.forEach(function printVal(val){
     console.log(val); 
 })
 
 arr.forEach((val,idx,arr) =>{
     console.log(val.toUpperCase(),idx,arr); 
-}) */
+}) 
 
 //! print the square of each value using the forEach loop.
 
