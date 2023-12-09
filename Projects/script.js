@@ -1,70 +1,81 @@
-let userScore = 0
-let compScore = 0
+//! Initialize user and computer scores
+let userScore = 0;
+let compScore = 0;
 
+//! Select all elements with the class "choice" and the element with the id "msg"
 const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
 
+const userScorePara = document.querySelector("#user-score");
+const compScorePara = document.querySelector("#comp-score");
 
-
-
-const drawGame = ()=>{
-    console.log("Game is draw");
-    msg.innerText = "Game is draw"
+//! Function to handle a draw game
+const drawGame = () => {
+    
+    //? Update the message text and background color for a draw
+    msg.innerText = "Game is draw(⊙_⊙;)";
+    msg.style.backgroundColor = "purple";
 };
 
-const genCompChoice = () =>{
-    //! computer generate a randomly so we can store in array
-    const options = ["rock", "papers", "scissors"];
-    const randIdx = Math.floor(Math.random()*3);
+//! Function to generate a random computer choice
+const genCompChoice = () => {
+    // Define the possible choices for the computer
+    const options = ["rock", "paper", "scissors"];
+    // Generate a random index to select a choice
+    const randIdx = Math.floor(Math.random() * 3);
+    // Return the computer's choice based on the random index
     return options[randIdx];
 };
 
+//! Function to display the winner message and update styles
 const showWinner = (userWin) => {
-    if(userWin){
-        console.log("You Win");
-        msg.innerText = "You Win(✿◡‿◡)"
+    
+    //? Check if the user won and update the message and styles accordingly
+    if (userWin) {
+        userScore++;
+        userScorePara.innerText = userScore;
+        msg.innerText = "You Win(✿◡‿◡)";
         msg.style.backgroundColor = "green";
-    }else{
-        console.log("You Lose");
+    } else {
+        compScore++;
+        compScorePara.innerText = compScore;
         msg.innerText = "You lose ಥ_ಥ";
-        msg.style.backgroundColor = "red";
+        msg.style.backgroundColor = "darkred";
     }
-   
-}
-// computer choices
+};
+
+//! Function to play the game based on user choice
 const playGame = (userChoice) => {
-    console.log("User choice: " + userChoice);
-    // generate a computer choice
+    // Generate the computer's choice
     const compChoice = genCompChoice();
-    console.log("Computer choice: " + compChoice);
-    // compare the two choices
-    if(userChoice === compChoice){
+    
+    //? Check if the user and computer choices are the same
+    if (userChoice === compChoice) {
+        // If choices are the same, it's a draw
         drawGame();
-    }else{
+    } else {
         let userWin = true;
+        
+        //? Determine the winner based on user and computer choices
         if (userChoice === "rock") {
-            //scissors, paper
             userWin = compChoice === "paper" ? false : true;
-          } else if (userChoice === "paper") {
-            //rock, scissors
+        } else if (userChoice === "paper") {
             userWin = compChoice === "scissors" ? false : true;
-          } else {
-            //rock, paper
+        } else {
             userWin = compChoice === "rock" ? false : true;
-          }
-          showWinner(userWin);
+        }
+        // Display the winner message
+        showWinner(userWin);
     }
-}
+};
 
-
-// user choice
+//! Event listener for each choice element
 choices.forEach((choice) => {
-    console.log(choice);
-    choice.addEventListener("click", () =>{
-        // user which specific choice is selected
+    choice.addEventListener("click", () => {
+        
+        //? Get the user's choice from the clicked element's id attribute
         const userChoice = choice.getAttribute("id");
-
-        console.log("choice was clicked -",userChoice);
+        // Call the playGame function with the user's choice
         playGame(userChoice);
     });
 });
