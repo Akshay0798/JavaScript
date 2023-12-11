@@ -13,6 +13,7 @@ body{
    display: flex;
 }
 .game{
+    
    height: 60vmin; 
    width: 60vmin;
    display: flex;
@@ -53,4 +54,8 @@ body{
 }
 .hide{
     display: none;
+}
+h1{
+    color: azure;
+    margin-bottom: 0px;
 }
